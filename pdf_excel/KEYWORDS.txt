@@ -1,0 +1,22 @@
+###在下面配置信息,你需要给出账号密码和pdf对应的匹配规则
+#注意：以#符号开头的行不会被读取
+#
+## 1.账号密码
+user=
+password=
+eamil_server=outlook.office365.com
+#eamil_server=
+#
+##2.提取PDF的名称规则：pdf名称需要含有这个名字,名字之间以;号隔开,
+#PDF_RULE说明： Rechnungsportal 可以匹配到Rechnungsportal021644515.pdf,Debit可以匹配到Debit_124545_20210102.pdf
+#FOLDER_RULE说明：pdf名字包含Zahlungsavis Otto的，会放入OTTO Payment Advice的目录中;pdf名字包含价差的，会放入价差的目录中;
+PDF_RULE=Zahlungsavis Otto;WR;Rechnungsportal;Debit;ITA;ITA;dsaffsadsgda
+FOLDER_RULE=OTTO Payment Advice;退机DN;Marketing;Rework;价差;量差;年返
+##3.获取最近多少天邮件的附件
+#例如 2,那么获取邮件的日期为昨天和今天，两天的数据
+days=90
+##4.注意事项
+##双击即可运行exe文件，运行DownloadPDF.exe实现pdf下载，每次运行前会删除程序所在目录的文件夹（文件夹名称为OTTO Payment Advice;退机DN;Marketing;Rewoke;价差;量差;年返）
+##运行PDFRename.exe实现pdf到excel和pdf重命名，每次运行前会删除程序所在目录的result.xlsl，重新生成新的result.xlsl文件
+## 运行程序前记得关闭pdf和result.xlsl ，不然会删除不成功，会有报错提示，关闭文件后再次执行即可
+## all 名称的文件夹里面的文件为下载邮箱日期内的全部pdf，可用来验证时候有漏下载的
